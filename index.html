@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PoECrafter</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">     
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+     </head>
+  <body class="cursor">
+    <div>
+      <img id="currency-cursor" src="" width="24" height="24">
+    </div>
+    <div class="container-fluid col-md-1">
+      <div class="dps-text">
+        <div id="dps"></div>
+        <div id="pdps"></div>
+        <div id="edps"></div>
+      </div>
+      <div class="row">
+        <button class="btn btn-primary dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Bases
+        </button>
+        <div id="bases-dropdown" class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenuButton">
+        </div>
+        <button class="btn btn-secondary btn-block" type="button" onclick="resetCount()">Reset</button>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="container-fluid col-md-5 col-sm-10">
+      <figure id="currency-tab-svg">
+        <svg viewBox="0 0 1264 1264" preserveAspectRatio="xMinYMin meet">
+          <image height="1264" width="1264" href="./assets/images/currencytab.png"></image>
+          <rect id="rect-whetstone" x="670" y="142" opacity="0.7" fill="#04041E" width="84" height="84"></rect>
+          <image href="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyWeaponQuality.png" x="670" y="142" width="84" height="84"></image>
+          <text id="text-whetstone" class="currency-text" x="680" y="174"></text>
+          <rect id="rect-whetstone-capture" class="rect-invisible" x="670" y="142" opacity="0" width="84" height="84"></rect>
+
+          <rect id="rect-armour-scrap" x="787" y="142" opacity="0.7" fill="#04041E" width="84" height="84"></rect>
+          <image href="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyArmourQuality.png" x="787" y="142" width="84" height="84"></image>
+          <text id="text-armour-scrap" class="currency-text" x="797" y="172"></text>
+          <rect id="rect-armour-scrap-capture" class="rect-invisible" x="787" y="142" opacity="0" width="84" height="84"></rect>
+
+          <rect id="rect-transmute" x="38" y="298" opacity="0.7" fill="#04041E" width="84" height="84"></rect>
+          <image href="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyUpgradeToMagic.png" x="38" y="298" width="84" height="84"></image>
+          <text id="text-transmute" class="currency-text" x="48" y="328"></text>
+          <rect id="rect-transmute-capture" class="rect-invisible" x="38" y="298" opacity="0" width="84" height="84"></rect>
+
+          <rect id="rect-alteration" x="156" y="298" opacity="0.7" fill="#04041E" width="84" height="84"></rect>
+          <image href="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyRerollMagic.png" x="156" y="298" width="84" height="84"></image>
+          <text id="text-alteration" class="currency-text" x="166" y="328"></text>
+          <rect id="rect-alteration-capture" class="rect-invisible" x="156" y="298" opacity="0" width="84" height="84"></rect>
+          
+          <rect id="rect-annulment" x="273" y="298" opacity="0.7" fill="#04041E" width="84" height="84"></rect>
+          <image href="https://web.poecdn.com/image/Art/2DItems/Currency/AnnullOrb.png" x="273" y="298" width="84" height="84"></image>
+          <text id="text-annulment" class="currency-text" x="283" y="328"></text>
+          <rect id="rect-annulment-capture" class="rect-invisible" x="273" y="298" opacity="0" width="84" height="84"></rect>
+
+          <rect id="rect-exalted" x="530" y="298" opacity="0.7" fill="#04041E" width="84" height="84"></rect>
+          <image href="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyAddModToRare.png" x="530" y="298" width="84" height="84"></image>
+          <text id="text-exalted" class="currency-text" x="540" y="328"></text>
+          <rect id="rect-exalted-capture" class="rect-invisible" x="530" y="298" opacity="0" width="84" height="84"></rect>
+
+          <rect id="rect-regal" x="787" y="298" opacity="0.7" fill="#04041E" width="84" height="84"></rect>
+          <image href="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyUpgradeMagicToRare.png" x="787" y="298" width="84" height="84"></image>
+          <text id="text-regal" class="currency-text" x="797" y="328"></text>
+          <rect id="rect-regal-capture" class="rect-invisible" x="787" y="298" opacity="0" width="84" height="84"></rect>
+
+          <rect id="rect-alchemy" x="905" y="298" opacity="0.7" fill="#04041E" width="84" height="84"></rect>
+          <image href="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyUpgradeToRare.png" x="905" y="298" width="84" height="84"></image>
+          <text id="text-alchemy" class="currency-text" x="915" y="328"></text>
+          <rect id="rect-alchemy-capture" class="rect-invisible" x="905" y="298" opacity="0" width="84" height="84"></rect>
+
+          <rect id="rect-chaos" x="1022" y="298" opacity="0.7" fill="#04041E" width="84" height="84"></rect>
+          <image href="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyRerollRare.png" x="1022" y="298" width="84" height="84"></image>
+          <text id="text-chaos" class="currency-text" x="1032" y="328"></text>
+          <rect id="rect-chaos-capture" class="rect-invisible" x="1022" y="298" opacity="0" width="84" height="84"></rect>
+
+          <rect id="rect-blessed" x="1139" y="298" opacity="0.7" fill="#04041E" width="84" height="84"></rect>
+          <image href="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyImplicitMod.png" x="1139" y="298" width="84" height="84"></image>
+          <text id="text-blessed" class="currency-text" x="1149" y="328"></text>
+          <rect id="rect-blessed-capture" class="rect-invisible" x="1139" y="298" opacity="0" width="84" height="84"></rect>
+
+          <rect id="rect-augment" x="391" y="408" opacity="0.7" fill="#04041E" width="84" height="84"></rect>
+          <image href="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyAddModToMagic.png" x="391" y="408" width="84" height="84"></image>
+          <text id="text-augment" class="currency-text" x="401" y="438"></text>
+          <rect id="rect-augment-capture" class="rect-invisible" x="391" y="408" opacity="0" width="84" height="84"></rect>
+
+          <rect id="rect-divine" x="1139" y="408" opacity="0.7" fill="#04041E" width="84" height="84"></rect>
+          <image href="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyModValues.png" x="1139" y="408" width="84" height="84"></image>
+          <text id="text-divine" class="currency-text" x="1149" y="438"></text>
+          <rect id="rect-divine-capture" class="rect-invisible" x="1139" y="408" opacity="0" width="84" height="84"></rect>
+
+          <rect id="rect-jeweller" x="155" y="588" opacity="0.7" fill="#04041E" width="84" height="84"></rect>
+          <image href="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyRerollSocketNumbers.png" x="155" y="588" width="84" height="84"></image>
+          <text id="text-jeweller" class="currency-text" x="165" y="618"></text>
+          <rect id="rect-jeweller-capture" class="rect-invisible" x="155" y="588" opacity="0" width="84" height="84"></rect>
+
+          <rect id="rect-fusing" x="273" y="588" opacity="0.7" fill="#04041E" width="84" height="84"></rect>
+          <image href="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyRerollSocketLinks.png" x="273" y="588" width="84" height="84"></image>
+          <text id="text-fusing" class="currency-text" x="283" y="618"></text>
+          <rect id="rect-fusing-capture" class="rect-invisible" x="273" y="588" opacity="0" width="84" height="84"></rect>
+
+          <rect id="rect-chromatic" x="391" y="588" opacity="0.7" fill="#04041E" width="84" height="84"></rect>
+          <image href="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyRerollSocketColours.png" x="391" y="588" width="84" height="84"></image>
+          <text id="text-chromatic" class="currency-text" x="401" y="618"></text>
+          <rect id="rect-chromatic-capture" class="rect-invisible" x="391" y="588" opacity="0" width="84" height="84"></rect>
+
+          <rect id="rect-scouring" x="787" y="588" opacity="0.7" fill="#04041E" width="84" height="84"></rect>
+          <image href="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyConvertToNormal.png" x="787" y="588" width="84" height="84"></image>
+          <text id="text-scouring" class="currency-text" x="797" y="618"></text>
+          <rect id="rect-scouring-capture" class="rect-invisible" x="787" y="588" opacity="0" width="84" height="84"></rect>
+
+          <rect id="rect-eternal" x="242" y="963" opacity="0.7" fill="#04041E" width="84" height="84"></rect>
+          <image href="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyImprintOrb.png" x="242" y="963" width="84" height="84"></image>
+          <text id="text-eternal" class="currency-text" x="252" y="993"></text>
+          <rect id="rect-eternal-capture" class="rect-invisible" x="242" y="963" opacity="0" width="84" height="84"></rect>
+
+          <rect id="rect-imprint" x="242" y="1079" opacity="0.7" fill="#04041E" width="84" height="84"></rect>
+          <image href="https://web.poecdn.com/image/Art/2DItems/Currency/CurrencyImprint.png" x="242" y="1079" width="84" height="84"></image>
+          <text id="text-imprint" class="currency-text" x="252" y="1109"></text>
+          <rect id="rect-imprint-capture" class="rect-invisible" x="242" y="1079" opacity="0" width="84" height="84"></rect>
+
+          <rect id="rect-item-slot" x="556", y="552" opacity="0.7" fill="#04041E" width="166" height="340"></rect>
+          <image id="item-slot-img" href="" x="0" y="0" width="0" height="0"></image>                
+          <image id="socket-L1" href="" x="0" y="0" width="60", height="60"></image>
+          <image id="socket-L2" href="" x="0" y="0" width="60", height="60"></image>
+          <image id="socket-L3" href="" x="0" y="0" width="60", height="60"></image>
+          <image id="socket-R1" href="" x="0" y="0" width="60", height="60"></image>
+          <image id="socket-R2" href="" x="0" y="0" width="60", height="60"></image>
+          <image id="socket-R3" href="" x="0" y="0" width="60", height="60"></image>  
+          <image id="socket-link1" href="" x="0" y="0" width="64" height="32"></image>
+          <image id="socket-link2" href="" x="0" y="0" width="32" height="64"></image>
+          <image id="socket-link3" href="" x="0" y="0" width="64" height="32"></image>
+          <image id="socket-link4" href="" x="0" y="0" width="32" height="64"></image>
+          <image id="socket-link5" href="" x="0" y="0" width="64" height="32"></image>
+          <rect id="rect-item-slot-capture" class="rect-invisible" x="556", y="552" opacity="0" width="166" height="340"></rect>
+        </svg>
+        <div class="row justify-content-center">
+          <div class="item-box">
+            <div class="item-title">
+              <div id="title-bar">
+                <div id="title-bar-left"></div>
+                <div id="title-bar-right"></div>
+                <div class="title-text">
+                  <span id="title"></span>
+                </div>
+                <div class="title-text-2">
+                  <span id="title-2"></span>
+                </div>
+              </div>
+            </div>
+            <div class="item-stats">
+              <div class="item-stats--header">
+                <div>
+                  <span id="weapon-type" clas="text--descriptor"></span>
+                  <span id="quality" class="text--descriptor"></span>
+                  <span id="quality-value" class="text--magic"></span>
+                  <span id="block" class="text--descriptor"></span>
+                  <span id="block-value" class="text--normal"></span>
+                  <span id="armour" class="text--descriptor"></span>
+                  <span id="armour-value" class="text--magic"></span>
+                  <span id="evasion" class="text--descriptor"></span>
+                  <span id="evasion-value" class="text--magic"></span>
+                  <span id="energy-shield" class="text--descriptor"></span>
+                  <span id="energy-shield-value" class="text--magic"></span>
+                  <span id="weapon-phys" clas="text--descriptor"></span><span id="weapon-phys-value" class="text--normal"></span>
+                  <div>
+                    <span id="weapon-ele" clas="text--descriptor"></span><span id="weapon-fire-value" class="text--fire"></span><span id="weapon-comma-1" class="text--descriptor"></span><span id="weapon-cold-value" class="text--cold"></span><span id="weapon-comma-2" class="text--descriptor"></span><span id="weapon-light-value" class="text--light"></span>
+                  </div>
+                  <span id="weapon-chaos" clas="text--descriptor"></span><span id="weapon-chaos-value" class="text--chaos"></span>
+                  <span id="weapon-crit" clas="text--descriptor"></span><span id="weapon-crit-value" class="text--normal"></span>
+                  <span id="weapon-aps" clas="text--descriptor"></span><span id="weapon-aps-value" class="text--normal"></span>
+                  <span id="weapon-range" clas="text--descriptor"></span><span id="weapon-range-value" class="text--normal"></span>
+                </div>
+                <div id="requirements-separator" class="item-separator--normal"></div>
+                <div class="item-requirements">
+                  <span id="requirements" class="text--descriptor"></span>
+                  <span id="requirement-level" class="text--descriptor"></span>
+                  <span id="requirement-level-value" class="text--normal"></span><span id="requirement-comma-1" class="text--descriptor"></span>
+                  <span id="requirement-str-value" class="text--normal"></span>
+                  <span id="requirement-str" class="text--descriptor"></span><span id="requirement-comma-2" class="text--descriptor"></span>
+                  <span id="requirement-dex-value" class="text--normal"></span>
+                  <span id="requirement-dex" class="text--descriptor"></span><span id="requirement-comma-3" class="text--descriptor"></span>
+                  <span id="requirement-int-value" class="text--normal"></span>
+                  <span id="requirement-int" class="text--descriptor"></span>
+                </div>
+              </div>
+              <div id="implicit-separator" class="item-separator--normal"></div>
+              <div id="item-implicit"></div>
+              <div id="stats-separator" class="item-separator--normal"></div>
+              <div id="item-stats-values">
+                <span id="stat-1" class="text--magic"></span>
+                <span id="stat-2" class="text--magic"></span>
+                <span id="stat-3" class="text--magic"></span>
+                <span id="stat-4" class="text--magic"></span>
+                <span id="stat-5" class="text--magic"></span>
+                <span id="stat-6" class="text--magic"></span>
+              </div>
+            </div>
+            <div class="item-flavor-text"></div>
+          </div>
+        </div>
+      </figure>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="./scripts/program.js"></script>
+  </body>
+</html>

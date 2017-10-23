@@ -1,0 +1,234 @@
+@font-face {
+  font-family: 'Fontin-SmallCaps';
+  src: url('../assets/fonts/Fontin-SmallCaps.WOFF') format('woff');
+}
+
+.item-box {
+  position: absolute;
+  margin-top: 280px;
+  transform: translateY(-100%);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: auto;
+  background-color: rgba(0, 0, 0, 0.85);
+  text-align: center;
+  font-family: 'Fontin-SmallCaps';
+  color: rgb(128, 128, 128);
+  font-size: 10.875pt;
+  letter-spacing: 0.1px;
+  z-index: 2;
+  pointer-events: none;
+  display: none;
+}
+
+.title-bar--normal {
+  background: url(https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/ItemsHeaderWhiteMiddle.png?scale=1) top left repeat-x;
+  height: 33px;
+  position: relative;
+}
+
+.title-bar-left--normal {
+  background: url(https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/ItemsHeaderWhiteLeft.png?scale=1) top left no-repeat;
+  left: 0;
+  height: 33px;
+  width: 29px;
+  position: absolute;
+}
+
+.title-bar-right--normal {
+  background-image: url(https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/ItemsHeaderWhiteRight.png?scale=1);
+  right: 0;
+  height: 33px;
+  width: 29px;
+  position: absolute;
+}
+
+.item-separator--normal {
+  background-image: url(https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/ItemsSeparatorWhite.png?scale=1);
+  margin: auto;
+  width: 200px;
+  height: 8px;
+}
+
+.title-bar--magic {
+  background: url(https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/ItemsHeaderMagicMiddle.png?scale=1) top left repeat-x;
+  height: 33px;
+  position: relative;
+}
+
+.title-bar-left--magic {
+  background: url(https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/ItemsHeaderMagicLeft.png?scale=1) top left no-repeat;
+  left: 0;
+  height: 33px;
+  width: 29px;
+  position: absolute;
+}
+
+.title-bar-right--magic {
+  background-image: url(https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/ItemsHeaderMagicRight.png?scale=1);
+  right: 0;
+  height: 33px;
+  width: 29px;
+  position: absolute;
+}
+
+.item-separator--magic {
+  background-image: url(https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/ItemsSeparatorMagic.png?scale=1);
+  margin: auto;
+  width: 200px;
+  height: 8px;
+}
+
+.title-bar--rare {
+  background: url(https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/ItemsHeaderRareMiddle.png?scale=1) top left repeat-x;
+  height: 54px;
+  position: relative;
+}
+
+.title-bar-left--rare {
+  background: url(https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/ItemsHeaderRareLeft.png?scale=1) top left no-repeat;
+  left: 0;
+  height: 54px;
+  width: 44px;
+  position: absolute;
+}
+
+.title-bar-right--rare {
+  background-image: url(https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/ItemsHeaderRareRight.png?scale=1);
+  right: 0;
+  height: 54px;
+  width: 44px;
+  position: absolute;
+}
+
+.item-separator--rare {
+  background-image: url(https://web.poecdn.com/image/Art/2DArt/UIImages/InGame/ItemsSeparatorRare.png?scale=1);
+  margin: auto;
+  width: 200px;
+  height: 8px;
+  padding: 1px;
+}
+
+.title-text {
+  line-height: 31px;
+  font-size: 14.25pt;
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+.title-text-2 {
+  line-height: 16px;
+  font-size: 14.25pt;
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+.text--normal {
+  color: rgb(200, 200, 200);
+}
+
+.text--magic {
+  color: rgb(137, 136, 255);
+}
+
+.text--rare {
+  color: rgb(255, 255, 119);
+}
+
+.text--descriptor {
+  color: rgb(128, 128, 128);
+}
+
+.text--fire {
+  max-width: 360px;
+  color: rgb(150, 0, 0);
+}
+
+.text--cold {
+  max-width: 360px;
+  color: rgb(54, 99, 146);
+}
+
+.text--light {
+  max-width: 360px;
+  color: rgb(255, 215, 0);
+}
+
+.text--chaos {
+  max-width: 360px;
+  color: rgb(207, 32, 143);
+}
+
+.text--flavor {
+  font-style: italic;
+}
+
+.item-stats {
+  padding-top: 6px;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-bottom: 6px;
+}
+
+.item-stats--values {
+  display: inline-flex;
+  flex-direction: column;
+  vertical-align: middle;
+}
+
+.item-flavor-text {
+  min-width: 360px;
+  max-width: 360px;
+  min-width: auto;
+}
+
+.scrollable-menu {
+  height: auto;
+  max-height: 420px;
+  overflow-x: hidden;
+}
+
+#currency-tab-svg { 
+  margin: auto;
+  position: relative;
+  width: 100%; 
+  padding-bottom: 100%;
+  max-width: 632px;
+  max-height: 632px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: url('../assets/images/cursor.png') 6 2, default;
+}
+
+#currency-tab-svg svg { 
+  position: absolute; 
+  text-align: center;
+  top: 0; 
+  left: 0;
+}
+
+#currency-cursor {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.currency-text {
+  font-family: 'Fontin-SmallCaps';
+  font-size: 28pt;
+  fill: rgb(255, 255, 255);
+  text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black;
+}
+
+.dps-text {
+  position: absolute;
+  left: -146%;
+}
